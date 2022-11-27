@@ -1,0 +1,171 @@
+.interview-form {
+  flex: 1;
+  display: flex;
+
+  .sections-container {
+    padding-right: 45px;
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      padding-right: 20px;
+    }
+
+    .interview-section {
+      @import 'sections';
+  
+      background: $white;
+      border: 1px solid #D6D6D6;
+      box-shadow: 0px 6px 12px -6px rgba(24, 39, 75, 0.04), 0px 8px 24px -4px rgba(24, 39, 75, 0.02);
+      border-radius: 4px;
+  
+      &:not(:last-child) {
+        margin-bottom: 56px;
+
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 25px;
+        }
+      }
+  
+      .collapse-button {
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-align: left;
+        font-size: 28px;
+        line-height: 33px;
+        background-color: #F6F5F9;
+        border-radius: 4px 4px 0 0;
+
+        @include media-breakpoint-down(sm) {
+          padding: 15px;
+        }
+  
+        .section-name {
+          display: flex;
+          align-items: center;
+        }
+  
+        svg {
+          height: 16px;
+          transition: transform 0.3s ease-in-out;
+
+          &.open {
+            transform: scaleY(-1);
+          }
+        }
+
+        &:hover {
+          background-color: #efedf5;
+        }
+  
+        &:focus {
+          box-shadow: none;
+        }
+  
+        .interview-section-number {
+          margin-right: 16px;
+        }
+      }
+  
+      .interview-section-body {
+        padding: 32px 24px;
+
+        @include media-breakpoint-down(sm) {
+          padding: 24px 15px;
+        }
+  
+        .section-body-content {
+          width: 100%;
+          display: flex;
+  
+          &:not(:first-child) {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px dashed $border-color;
+          }
+  
+          @include media-breakpoint-down(lg) {
+            flex-direction: column;
+          }
+  
+          .body-left-side {
+            width: 52%;
+  
+            @include media-breakpoint-down(lg) {
+              width: 100%;
+              margin-bottom: 20px;
+            }
+  
+            h5 {
+              margin-bottom: 0;
+            }
+  
+            .section-title-with-avatar {
+              display: flex;
+              align-items: center;
+  
+              .avatar {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+                min-height: 50px;
+                margin-right: 16px;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+  
+              .avatar-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+  
+                .title {
+                  font-size: 20px;
+                  font-weight: 700;
+                  line-height: 30px;
+                  margin-bottom: 0;
+                }
+  
+                .subtitle {
+                  display: inline-block;
+                  margin-top: -2px;
+                  font-size: 12px;
+                  line-height: 16px;
+                  color: $neutral-400;
+                }
+              }
+            }
+          }
+  
+          .body-right-side {
+            width: 48%;
+  
+            @include media-breakpoint-down(lg) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.input.form-group, .select.form-group, .toggle-buttons.form-group, .date-input.form-group {
+  &:not(:last-child) {
+    margin-bottom: 33px !important;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 20px !important;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+}

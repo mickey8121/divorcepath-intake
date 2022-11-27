@@ -1,0 +1,11 @@
+.divorcepath-brand {
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+  color: $primary;
+
+  @include media-breakpoint-only(xs) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

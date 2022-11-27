@@ -1,0 +1,22 @@
+@import 'background';
+@import 'children';
+@import 'address';
+@import 'submit';
+
+.hint {
+    padding: 8px 12px;
+    background-color: $neutral-100;
+    border-radius: 4px;
+}
+
+.interview-section-body.legal-issue-section {
+  .hint {
+    margin-top: -17px;
+  }
+
+  & > .section-body-content:nth-child(2) {
+    padding-top: 0;
+    margin-top: 40px;
+    border-top: none;
+  }
+}

@@ -1,0 +1,16 @@
+overwrite: true
+schema: ${NEXT_PUBLIC_SANITY_API}
+documents: src/graphql/sanity/**/*.{ts,tsx}
+generates:
+  src/generated/sanity_graphql.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      typesPrefix: Sanity_
+      gqlImport: "@apollo/client#gql"
+      withHOC: false
+      withHooks: true
+      withComponent: false

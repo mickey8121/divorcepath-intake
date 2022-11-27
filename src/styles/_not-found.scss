@@ -1,0 +1,42 @@
+.not-found {
+  padding: 40px;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  .not-found-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+
+    .not-found-image {
+      width: 406px;
+      height: 306px;
+  
+      @include media-breakpoint-only(xs) {
+        width: 203px;
+        height: 153px;
+      }
+    }
+  
+    .not-found-text {
+      max-width: 668px;
+      font-size: 16px;
+      line-height: 23px;
+      text-align: center;
+  
+      @include media-breakpoint-only(xs) {
+        font-size: 14px;
+        line-height: 19px;
+      }
+      
+      .not-found-span {
+        color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.select.form-group {
+	.custom-select__control {
+		min-height: 50px;
+		border-color: #CDD4DE !important;
+	
+		&:focus, &:active {
+			outline: none;
+			border-color: transparentize($color: #6e00ff, $amount: 0.6) !important;
+			box-shadow: inset 0 1px 1px rgba(31,45,61,.075), 0 0 20px rgba(110,0,255,.1);
+		}
+	
+		.custom-select__value-container {
+			padding-left: 16px;
+	
+			.custom-select__placeholder {
+				color: $neutral-400;
+			}
+		}
+	
+		.custom-select__indicators {
+			.custom-select__indicator-separator {
+				display: none;
+			}
+		}
+	
+		.custom-select__menu {
+			z-index: 4;
+		}
+	}
+
+	.control-with-icon {
+		position: relative;
+
+		svg {
+			position: absolute;
+			left: 16px;
+			top: calc(50% - 12px);
+			z-index: 10;
+			color: $neutral-500;
+		}
+
+		.custom-select__control {
+			padding-left: 40px;
+
+			.custom-select__indicators {
+				display: none;
+			}
+		}
+	}
+
+	.custom-select__option {
+		line-height: 24px !important;
+	}
+}

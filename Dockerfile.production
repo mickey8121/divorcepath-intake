@@ -1,0 +1,15 @@
+FROM node:14.18.0
+
+ENV PORT 3001
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_PUBLIC_GRAPHQL_API https://app.divorcepath.com/graphql
+ENV NEXT_PUBLIC_SCHEMA_URL https://staging.divorcepath.com/graphql
+ENV NEXT_PUBLIC_MAIN_PAGE_LINK https://www.divorcepath.com/
+
+ADD . .
+RUN rm -rf .env.local && mv .env.prod .env
+RUN yarn install
+RUN yarn build
+EXPOSE 3001
+
+ENTRYPOINT [ "yarn", "start" ]

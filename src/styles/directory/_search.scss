@@ -1,0 +1,31 @@
+.search-container {
+  max-width: 652px;
+  margin: 0 auto;
+  margin-top: -32px;
+  position: relative;
+  z-index: 10;
+
+  @include media-breakpoint-down(md) {
+    max-width: 400px;
+    margin-top: -21px;
+  }
+
+  .control-with-icon {
+		svg {
+      @include media-breakpoint-down(md) {
+        left: 12px;
+      }
+		}
+
+		.custom-select__control {
+      @include media-breakpoint-down(md) {
+        min-height: 42px;
+        padding-left: 32px;
+      }
+
+			.custom-select__indicators {
+				display: none;
+			}
+		}
+  }
+}

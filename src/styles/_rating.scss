@@ -1,0 +1,26 @@
+.rating-stars {
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+
+  .rating-star {
+    display: inline-block;
+
+    & > path {
+      transition: fill .2s;
+      fill: #DFDFDF;
+    }
+  
+    &.filled {
+      & > path {
+        fill: #FFC012;
+      }
+    }
+  
+    &.half-filled {
+      & path:first-child {
+        fill: #FFC012;
+      }
+    }
+  }
+}

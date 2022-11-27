@@ -1,0 +1,40 @@
+.toggle-buttons.form-group {
+  .custom-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    .btn {
+      height: 49px;
+      padding: 15px 24px;
+      flex: initial;
+      border: 0;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+      white-space: nowrap;
+
+      @include media-breakpoint-down(sm) {
+        height: 42px;
+        padding: .5rem 1.25rem;
+      }
+
+      &.btn-secondary {
+        color: $neutral-900;
+        background-color: $neutral-100;
+
+        &.active {
+          &:not(:disabled) {
+            color: $gray-900;
+            background-color: $btn-secondary-focus !important;
+            border-color: $btn-secondary-border-color !important;
+            box-shadow: $custom-box-shadow !important;
+          }
+
+          &:disabled {
+            background-color: $btn-secondary-focus !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.directory-header-container {
+  @include make-container();
+  @include make-container-max-widths();
+
+  .directory-header {
+    max-width: 652px;
+    margin: auto;
+    color: $white;
+    padding: 37px 0 70px;
+  
+    .header-title {
+      position: relative;
+      z-index: 10;
+  
+      @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .title {
+        font-family: 'DM Sans';
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 700;
+
+        @include media-breakpoint-down(md) {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 31px;
+        }
+      }
+  
+      .subtitle-breadcrumb {
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 8px;
+
+        span {
+          margin: 0 3px;
+        }
+  
+        a {
+          color: $white;
+
+          &:hover {
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

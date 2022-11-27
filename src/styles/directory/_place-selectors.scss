@@ -1,0 +1,37 @@
+.place-selectors {
+  margin-top: 40px;
+  margin-bottom: -14px;
+  display: none;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
+
+  .select.form-group {
+    .label {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 4px;
+    }
+
+    .custom-select__control {
+      min-height: 42px;
+      border-color: $neutral-200 !important;
+
+      .custom-select__value-container {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  
+    .custom-select__option {
+      line-height: 24px !important;
+    }
+
+    .input-hint {
+      font-size: 12px;
+      line-height: 14px;
+      margin-top: 4px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import 'input';
+@import 'select';
+@import 'toggle-buttons';
+@import 'date-input';
+
+.input, .select, .toggle-buttons, .date-input {
+	line-height: 16px;
+}
+
+.form-group {
+  .label.form-label {
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 16px;
+		margin-bottom: 8px;
+	}
+
+  .input-hint {
+		display: inline-block;
+		font-size: 12px;
+		line-height: 16px;
+		margin-top: 8px;
+		color: $neutral-400;
+	}
+}

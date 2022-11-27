@@ -1,0 +1,36 @@
+.places-sidebar {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  .cities, .provinces {
+    .title {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+      color: $neutral-500;
+      margin-bottom: 14px;
+    }
+
+    .links {
+      max-width: 163px;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  .cities {
+    margin-bottom: 40px;
+  }
+}

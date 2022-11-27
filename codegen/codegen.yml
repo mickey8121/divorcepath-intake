@@ -1,0 +1,20 @@
+overwrite: true
+schema: ${NEXT_PUBLIC_SCHEMA_URL}
+documents: src/graphql/!(sanity)**/*.{ts,tsx,graphql}
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      gqlImport: '@apollo/client#gql'
+      withHOC: false
+      withHooks: true
+      withComponent: false
+  src/startup/apollo/cache-options.ts:
+    plugins:
+      - fragment-matcher
+    config:
+      apolloClientVersion: 3

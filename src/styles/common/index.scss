@@ -1,0 +1,39 @@
+@import 'btns';
+@import 'loading';
+
+html,
+body,
+#__next,
+main,
+.app {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: $neutral-900;
+}
+
+.container {
+  transition: max-width .2s;
+}
+
+.org-name {
+  font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Sans', sans-serif;
+}
+
+a, a:not([href]):not([class]) {
+  cursor: pointer;
+  color: $link-500;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+
+  &:hover:not(:disabled) {
+    color: $primary-500;
+  }
+
+  &:active:not(:disabled), &:focus:not(:disabled) {
+    color: $primary-900;
+  }
+}

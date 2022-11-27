@@ -1,0 +1,393 @@
+.intake {
+  display: flex;
+  min-height: 100%;
+  
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
+  .intake-branding {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    background-color: var(--background-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    min-width: 50%;
+    color: var(--inverted-text-color);
+
+    @include media-breakpoint-down(md) {
+      flex: 0;
+      padding: 10px 10px 15px;
+    }
+
+    .intake-logo {
+      width: 375px;
+      height: 150px;
+
+      @include media-breakpoint-only(xs) {
+        width: 150px;
+        height: 60px;
+      }
+    }
+
+    .intake-brand-name {
+      margin: 15px 0 0;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 75px;
+      text-align: center;
+
+      @include media-breakpoint-only(xs) {
+        margin: 8px 0 16px;
+        font-size: 32px;
+        line-height: 37px;
+      }
+    }
+
+    .intake-brand-description {
+      margin: 24px 0 10px 0;
+      max-width: 340px;
+      font-size: 16px;
+      line-height: 21px;
+      font-weight: normal;
+      text-align: center;
+
+      @include media-breakpoint-only(xs) {
+        display: none;
+      }
+    }
+  }
+
+  .intake-main {
+    padding: 40px 10.25% 40px 40px;
+    flex: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box;
+
+    @include media-breakpoint-down(lg) {
+      padding: 40px 20px;
+      flex: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 10px 10px 40px;
+      flex: 1;
+      gap: 38px;
+    }
+
+    .intake-complement {
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      background-color: $neutral-100;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #6D757D;
+
+      @include xs-font;
+
+      @include media-breakpoint-only(xs) {
+        margin-bottom: 10px;
+      }
+    }
+    
+    .intake-form {
+      max-width: 316px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include media-breakpoint-down(lg) {
+        min-width: 303px;
+      }
+
+      @include media-breakpoint-down(md) {
+        min-width: 0;
+        width: 100%;
+        max-width: 450px;
+        justify-content: start;
+      }
+
+      .form-group {
+        display: grid;
+        position: relative;
+        gap: 0 5px;
+        grid-template-areas:
+        "label error"
+        "input input";
+        z-index: 3;
+
+        @include media-breakpoint-down(md) {
+          margin-bottom: 12px;
+        }
+
+        @include media-breakpoint-only(xs) {
+          &.name, &.phone, &.email, &.issue {
+            &.empty::after {
+              display: block;
+              position: absolute;
+              left: 13px;
+              font-size: 16px;
+              line-height: 20px;
+              color: #878787;
+              z-index: 1;
+
+              @include xs-font;
+            }
+
+            &::after {
+              display: none;
+            }
+          }
+
+          &.name, &.phone, &.email {
+            &.empty::after {
+              bottom: 13px;
+            }
+          }
+
+          &.issue {
+            &.empty::after {
+              top: 13px;
+            }
+          }
+
+          &.name {
+            &::after {
+              content: 'Full legal name';
+            }
+          }
+
+          &.first-name {
+            &::after {
+              content: 'First name';
+            }
+          }
+
+          &.last-name {
+            &::after {
+              content: 'Last name';
+            }
+          }
+
+          &.phone {
+            &::after {
+              content: 'Phone';
+            }
+          }
+
+          &.email {
+            &::after {
+              content: 'Email';
+            }
+          }
+
+          &.issue {
+            &::after {
+              content: 'How can we help?';
+            }
+          }
+        }
+
+        .form-control {
+          display: flex;
+          padding: 12px 40px 12px 12px;
+          border: 1px solid #CDD4DE;
+          grid-area: input;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          background-position: right 16px center;
+          background-size: auto;
+          font-size: 16px;
+          line-height: 20px;
+          z-index: 2;
+
+          @include xs-font;
+
+          &.is-invalid{
+            border: 1px solid $error;
+          }
+          
+
+          &[name='name'] {
+            background-image: url(/intake/images/icons/user.svg);
+
+            &.valid {
+              background-image: url(/intake/images/icons/user-green.svg);
+            }
+          }
+
+          &[name='phone'] {
+            background-image: url(/intake/images/icons/phone.svg);
+
+            &.valid {
+              background-image: url(/intake/images/icons/phone-green.svg);
+            }
+          }
+
+          &[name='email'] {
+            background-image: url(/intake/images/icons/email.svg);
+
+            &.valid {
+              background-image: url(/intake/images/icons/email-green.svg);
+            }
+          }
+
+          &:not(.is-invalid):hover {
+            border: 1px solid #8B97A3;
+          }
+
+          &:focus {
+            box-shadow: none;
+
+            &:not(.is-invalid) {
+              border: 1px solid $neutral-900;
+            }
+          }
+
+          &::placeholder {
+            color: #878787;
+
+            @include media-breakpoint-only(xs) {
+              color: transparent;
+            }
+          }
+        }
+
+        .form-check-input {
+          margin: 0 14px 0 0;
+          width: 20px;
+          height: 20px;
+          border: 1px solid #D6D6D6;
+          transition: border .2s ease, background-color .3s ease;
+
+          &.is-invalid {
+            border: 1px solid $error;
+          }
+
+          &:hover {
+            cursor: pointer;
+            border: 1px solid var(--primary);
+          }
+
+          &:focus {
+            box-shadow: none;
+          }
+
+          &:checked {
+            border: 1px solid var(--primary);
+            background-color: var(--primary);
+          }
+        }
+
+        .label {
+          margin-bottom: 4px;
+          display: inline-block;
+          font-size: 12px;
+          line-height: 14px;
+          align-self: flex-end;
+          grid-area: label;
+
+          @include media-breakpoint-only(xs) {
+            display: none;
+          }
+        }
+
+        .invalid-feedback {
+          margin: 0 0 4px 0;
+          grid-area: error;
+
+          .invalid-message {
+            margin: 0;
+            text-align: end;
+            font-size: 12px;
+            line-height: 14px;
+            color: $error;
+          }
+        }
+
+        &.intake-checkbox {
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          border-radius: 4px;
+
+          &.error {
+            box-shadow: 0px 0px 0px 1px $error;
+          }
+
+          .invalid-feedback {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .intake-privacy {
+      margin: 0;
+      color: #A0A0A0;
+      font-size: 16px;
+      line-height: 19px;
+
+      @include xs-font;
+
+      .intake-privacy-link {
+        color: $neutral-900;
+        transition: color .2s ease;
+
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin: 16px 0 18px;
+    padding: 14px 32px;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 4px;
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color:  var(--inverted-btn-color);
+    transition: filter .2s ease, box-shadow .2s ease;
+
+    &:focus {
+      box-shadow: 0px 6px 16px -6px var(--primary-shadow-color-s), 
+                  0px 8px 16px -6px var(--primary-shadow-color-xs);
+    }
+
+    &:hover {
+      box-shadow: 0px 6px 16px -6px var(--primary-shadow-color-s), 
+                  0px 8px 16px -6px var(--primary-shadow-color-xs);
+    }
+
+    &:active {
+      box-shadow: 0px 2px 4px -2px var(--primary-shadow-color-s), 
+                  0px 4px 4px -2px var(--primary-shadow-color-xs);
+    }
+  
+    @include media-breakpoint-down(md) {
+      margin: 12px 0 22px;
+    }
+
+    @include media-breakpoint-only(xs) {
+      margin: 0 0 10px;
+      padding: 10px 16px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+
+  @import 'thank-you';
+}
+

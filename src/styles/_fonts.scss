@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Roboto'), url('/intake/fonts/Roboto/Roboto-Bold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Roboto'), url('/intake/fonts/Roboto/Roboto-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), url('/intake/fonts/Roboto/Roboto-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('DM Sans'), url('/intake/fonts/DMSans/DMSans-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('DM Sans'), url('/intake/fonts/DMSans/DMSans-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('DM Sans'), url('/intake/fonts/DMSans/DMSans-Bold.ttf') format('opentype');
+}

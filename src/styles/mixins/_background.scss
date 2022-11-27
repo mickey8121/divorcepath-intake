@@ -1,0 +1,8 @@
+@mixin background-step($color) {
+  background-color: #{$color};
+}
+
+@mixin shadow-step($color) {
+  background-color: #{$color};
+  box-shadow: 0 0 8px 2px #{$color};
+}

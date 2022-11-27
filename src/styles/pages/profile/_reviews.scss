@@ -1,0 +1,118 @@
+.reviews-container {
+  border-radius: 6px;
+
+  .loading {
+    margin: 30px 0;
+  }
+
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid $border-color-accent;
+    background-color: $white;
+  }
+
+  .reviews-list {
+    .review-item {
+      padding: 24px 0;
+      background-color: $white;
+
+      &:not(:first-child) {
+        border-top: 1px solid $border-color-accent;
+      }
+
+      .review-main-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+
+        & > h6 {
+          margin: 0;
+          margin-right: 16px;
+          line-height: 20px;
+        }
+      }
+
+      .review-add-info {
+        display: flex;
+        margin-bottom: 16px;
+        
+        & > p, a {
+          font-size: 12px;
+          line-height: 16px;
+        }
+
+        p:first-child {
+          margin-right: 16px;
+        }
+
+        .review-source-link {
+          color: $link-500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &:after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url('/intake/images/icons/link.svg');
+            margin-left: 5px;
+            margin-bottom: -4px;
+          }
+        }
+      }
+
+      .review-description {
+        font-size: 14px;
+        line-height: 20px;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 9px;
+
+  .rating-stars {
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+
+    .rating-star {
+      display: inline-block;
+
+      & > path {
+        transition: fill .2s;
+        fill: #DFDFDF;
+      }
+    
+      &.filled {
+        & > path {
+          fill: #FFC012;
+        }
+      }
+    
+      &.half-filled {
+        & path:first-child {
+          fill: #FFC012;
+        }
+      }
+    }
+  }
+
+  .rating-details {
+    color: #878787;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

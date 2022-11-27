@@ -1,0 +1,129 @@
+.interview-sidebar {
+  padding-top: 20px;
+  margin-top: -20px;
+  position: sticky;
+  width: 219px;
+  min-width: 219px;
+  top: 0;
+
+  @include media-breakpoint-down(md) {
+    width: 35px;
+    min-width: 35px;
+  }
+
+  .sidebar-hint {
+    font-size: 12px;
+    line-height: 17px;
+    color: $neutral-400;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  .sidebar-text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .sidebar-item {
+    cursor: pointer;
+
+    @include media-breakpoint-down(md) {
+      .sidebar-item-title {
+        display: none;
+      }
+
+      .sidebar-item-body {
+        span.sidebar-text, p.sidebar-text {
+          display: none !important;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: calc(100% + 28px);
+        width: 1px;
+        top: 3px;
+        left: 16px;
+        border-right: 1px dashed #dfdfdf;
+        z-index: 1;
+      }
+    }
+
+    &:hover {
+      &:not(.active) {
+        .sidebar-text {
+          text-decoration: underline;
+        }
+      }
+
+      .sidebar-item-title {
+        text-decoration: underline;
+      }
+
+      .interview-section-number {
+        @each $section, $color in $section-colors {
+          &.#{$section} {
+            @include shadow-step($color);
+          }
+        }
+      }
+    }
+
+    .sidebar-item-header {
+      display: flex;
+
+      &.custom-timeline {
+        @each $section, $color in $section-colors {
+          &-#{$section} {
+            display: none;
+
+            .interview-section-number {
+              @include shadow-step($color);
+            }
+
+            .sidebar-item-title {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .interview-section-number {
+        transition: box-shadow 0.2s ease;
+        z-index: 2;
+      }
+
+      .sidebar-item-title {
+        margin-left: 16px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        color: $neutral-900;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .sidebar-item-body {
+      margin-bottom: 26px;
+      padding-left: 48px;
+
+      span.sidebar-text {
+        display: block;
+
+        &:first-of-type {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}

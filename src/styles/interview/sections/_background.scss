@@ -1,0 +1,23 @@
+.background-section {
+  & > .hint {
+    margin-bottom: 32px;
+
+    &:first-child + .section-body-content {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      border-top: 0 !important;
+    }
+  }
+
+  .relationship-section {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px dashed $border-color;
+
+    & > .section-body-content {
+      margin-top: 32px !important;
+      padding-top: 0 !important;
+      border-top: 0 !important;
+    }
+  }
+}

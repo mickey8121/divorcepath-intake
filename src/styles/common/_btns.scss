@@ -1,0 +1,79 @@
+.btn {
+  &.btn-primary {
+    color: $white;
+  }
+
+  &.btn-white {
+    background-color: #fff;
+    border-color: #fff;
+    -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%);
+    padding: 0.5rem 1.25rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+  }
+
+  &.btn-sign-up {
+    padding: 9px 16px;
+
+    & > div {
+      display: block !important;
+      margin-right: 8px !important;
+    }
+  }
+
+  &.btn-primary-accent {
+    border-color: $primary500;
+    background-color: transparent;
+    color: $primary500;
+
+    &:hover {
+      background-color: rgba($white, .3);
+      box-shadow: 0 2px 3px 2px rgba($primary500, .2);
+    }
+  }
+
+  &.custom-btn-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 21px;
+    white-space: nowrap;
+
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &.phone {
+      &:before {
+        background-image: url('/intake/images/icons/phone-white.svg');
+      }
+    }
+
+    &.email {
+      &:before {
+        background-image: url('/intake/images/icons/email-primary.svg');
+      }
+    }
+  }
+
+  &.btn-simple {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: $link-500;
+    font-family: 'DM Sans';
+    font-size: 14px;
+    line-height: 18px;
+    box-shadow: none;
+  }
+}

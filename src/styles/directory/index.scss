@@ -1,0 +1,40 @@
+
+.directory-page {
+  background-color: $white;
+  
+  @import 'search';
+
+  .directory-page-content {
+    @include make-container();
+    @include make-container-max-widths();
+
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column-reverse;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 24px;
+    }
+
+    @import 'places-sidebar';
+
+    .main-content {
+      padding-right: 20px;
+
+      @include media-breakpoint-down(md) {
+        padding-right: 0;
+      }
+
+      @import 'professionals-list';
+      @import 'place-selectors';
+      @import 'resources';
+    }
+
+    @import 'info-sidebar';
+  }
+}
